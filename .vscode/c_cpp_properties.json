@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "intelliSenseMode": "clang-x64",
+            "name": "Win32",
+            "cppStandard": "c++11",
+            "cStandard": "c99",
+            "compilerPath": "H:/workspace/RISC-V/GD32V/GD32VF103C-START/RISC-V Embedded GCC/8.2.0-2.2-20190521-0004/bin/riscv-none-embed-gcc",
+            "includePath": [
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/applications",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/board",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/drivers",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/libraries/GD32VF103_standard_peripheral",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/libraries/GD32VF103_standard_peripheral/Include",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/libraries/n22/drivers",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/libraries/n22/stubs",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/rt-thread/components/drivers/include",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/rt-thread/components/finsh",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/rt-thread/components/libc/compilers/newlib",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/rt-thread/include",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/rt-thread/libcpu/risc-v/bumblebee",
+                "H:/workspace/RISC-V/GD32V/GD32VF103C-START/rt-thread/libcpu/risc-v/common"
+            ],
+            "defines": [
+                "HAVE_CCONFIG_H",
+                "RT_USING_NEWLIB"
+            ]
+        }
+    ],
+    "version": 4
+}

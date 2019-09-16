@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "board.h": "c",
+        "gd32vf103.h": "c"
+    }
+}

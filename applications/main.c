@@ -11,7 +11,14 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
+    rt_uint32_t count = 1;
+    while(count++)
+    {
+        //rt_thread_mdelay(500);
+        rt_kprintf("hello world! [%d]\n",count);
+    }
     return RT_EOK;
 }
 

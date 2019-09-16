@@ -417,7 +417,7 @@ void usart_synchronous_clock_disable(uint32_t usart_periph)
     \param[in]  cpl: clock polarity
                 only one parameter can be selected which is shown as below:
       \arg        USART_CPL_LOW:  steady low value on CK pin 
-      \Rag        USART_CPL_HIGH: steady high value on CK pin
+      \arg        USART_CPL_HIGH: steady high value on CK pin
     \param[out] none
     \retval     none
 */

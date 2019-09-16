@@ -10,7 +10,7 @@ if os.getenv('RTT_CC'):
 
 if  CROSS_TOOL == 'gcc':
     PLATFORM    = 'gcc'
-    EXEC_PATH   = r'/opt/unknown-gcc/bin'
+    EXEC_PATH   = r'./RISC-V Embedded GCC/8.2.0-2.2-20190521-0004/bin'
 else:
     print('Please make sure your toolchains is GNU GCC!')
     exit(0)
@@ -18,12 +18,14 @@ else:
 if os.getenv('RTT_EXEC_PATH'):
     EXEC_PATH = os.getenv('RTT_EXEC_PATH')
 
-BUILD = 'debug'
-#BUILD = 'release'
+EXEC_PATH   = r'./RISC-V Embedded GCC/8.2.0-2.2-20190521-0004/bin'
+
+#BUILD = 'debug'
+BUILD = 'release'
 
 CORE = 'risc-v'
 MAP_FILE = 'rtthread.map'
-LINK_FILE = './libraries/n22/env_Eclipse/GD32VF103xB.lds'
+LINK_FILE = './libraries/n200/env_Eclipse/GD32VF103xB.lds'
 TARGET_NAME = 'rtthread.bin'
 
 #------- GCC settings ----------------------------------------------------------
@@ -44,7 +46,7 @@ if PLATFORM == 'gcc':
     CFLAGS = DEVICE
     CFLAGS += ' -save-temps=obj'
     AFLAGS = '-c'+ DEVICE + ' -x assembler-with-cpp'
-    AFLAGS += ' -Iplatform -Ilibraries/n22/include -Ilibraries/n22/env_Eclipse'
+    AFLAGS += ' -Iplatform -Ilibraries/n200/include -Ilibraries/n200/env_Eclipse'
     LFLAGS = DEVICE
     LFLAGS += ' -Wl,--gc-sections,-cref,-Map=' + MAP_FILE
     LFLAGS += ' -T ' + LINK_FILE
@@ -57,7 +59,7 @@ if PLATFORM == 'gcc':
         CFLAGS += ' -O0 -g3'
         AFLAGS += ' -g3'
     else:
-        CFLAGS += ' -O2'
+        CFLAGS += ' -Os'
 
     POST_ACTION = OBJCPY + ' -O binary $TARGET ' + TARGET_NAME + '\n'
     POST_ACTION += SIZE + ' $TARGET\n'
