@@ -1,0 +1,87 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "targetArchitecture": "risc-v",
+            "program": "risc-v",
+            "args": [""],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/home/tang/Desktop/GD32VF103C-START/riscv-none-gcc/8.2.0-2.2-20190521-0004/bin/riscv-none-embed-gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "launchCompleteCommand": "None",
+            "miDebuggerServerAddress": "localhost:3333",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target remote :3333",
+                    "description": "connect to server",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "file /home/tang/Desktop/GD32VF103C-START/rt-thread.elf",
+                    "description": "load file to gdb",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "load",
+                    "description": "download file to MCU",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "monitor reset",
+                    "description": "reset MCU",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "b main",
+                    "description": "set breakpoints at main",
+                    "ignoreFailures": false
+                },
+            ]
+        }
+    ]
+}
+// {
+//     // Use IntelliSense to learn about possible attributes.
+//     // Hover to view descriptions of existing attributes.
+//     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "riscv-none-embed-gcc build and debug active file",
+//             "type": "cppdbg",
+//             "request": "launch",
+//             "program": "${fileDirname}/${fileBasenameNoExtension}",
+//             "args": [],
+//             "stopAtEntry": false,
+//             "cwd": "${workspaceFolder}",
+//             "environment": [],
+//             "externalConsole": false,
+//             "MIMode": "gdb",
+//             "setupCommands": [
+//                 {
+//                     "description": "Enable pretty-printing for gdb",
+//                     "text": "-enable-pretty-printing",
+//                     "ignoreFailures": true
+//                 }
+//             ],
+//             "preLaunchTask": "riscv-none-embed-gcc build active file",
+//             "miDebuggerPath": "/usr/bin/gdb"
+//         }
+//     ]
+// }

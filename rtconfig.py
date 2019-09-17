@@ -10,7 +10,7 @@ if os.getenv('RTT_CC'):
 
 if  CROSS_TOOL == 'gcc':
     PLATFORM    = 'gcc'
-    EXEC_PATH   = r'./RISC-V Embedded GCC/8.2.0-2.2-20190521-0004/bin'
+    EXEC_PATH   = r'./riscv-none-gcc/8.2.0-2.2-20190521-0004/bin'
 else:
     print('Please make sure your toolchains is GNU GCC!')
     exit(0)
@@ -18,7 +18,7 @@ else:
 if os.getenv('RTT_EXEC_PATH'):
     EXEC_PATH = os.getenv('RTT_EXEC_PATH')
 
-EXEC_PATH   = r'./RISC-V Embedded GCC/8.2.0-2.2-20190521-0004/bin'
+EXEC_PATH   = r'./riscv-none-gcc/8.2.0-2.2-20190521-0004/bin'
 
 #BUILD = 'debug'
 BUILD = 'release'

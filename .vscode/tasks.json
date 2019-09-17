@@ -1,0 +1,23 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "openocd",
+            "type": "shell",
+            "command": "sudo ./openocd-gdlink/0.10.0-13/bin/openocd -f ./openocd-gdlink/openocd_gdlink.cfg && exit"
+        },
+        {
+            "label": "scons",
+            "type": "shell",
+            "command": "scons -c && scons -j4 && exit",
+            "problemMatcher": []
+        },
+        {
+            "label": "telnet localhost 4444",
+            "type": "shell",
+            "command": "telnet localhost 4444 && exit"
+        }
+    ],
+}
