@@ -18,19 +18,21 @@
 #endif
 
 /*  System Tick Configuration */
-static void systick_config(rt_uint32_t ticks) {
+static void systick_config(rt_uint32_t ticks)
+{
     /* set value */
-    *(rt_uint64_t *) (TIMER_CTRL_ADDR + TIMER_MTIMECMP) = ticks;
+    *(rt_uint64_t *)(TIMER_CTRL_ADDR + TIMER_MTIMECMP) = ticks;
     /* enable interrupt */
     eclic_irq_enable(CLIC_INT_TMR, 0, 0);
     /* clear value */
-    *(rt_uint64_t *) (TIMER_CTRL_ADDR + TIMER_MTIME) = 0;
+    *(rt_uint64_t *)(TIMER_CTRL_ADDR + TIMER_MTIME) = 0;
 }
 
 /* This is the timer interrupt service routine. */
-void eclic_mtip_handler(void) {
+void eclic_mtip_handler(void)
+{
     /* clear value */
-    *(rt_uint64_t *) (TIMER_CTRL_ADDR + TIMER_MTIME) = 0;
+    *(rt_uint64_t *)(TIMER_CTRL_ADDR + TIMER_MTIME) = 0;
 
     /* enter interrupt */
     rt_interrupt_enter();
@@ -47,7 +49,10 @@ void *__wrap_memset(void *s, int c, size_t n)
     return rt_memset(s, c, n);
 }
 
-void rt_hw_board_init(void) {
+void rt_hw_board_init(void)
+{
+extern void riscv_init();
+    riscv_init();
     systick_config(TIMER_FREQ / RT_TICK_PER_SECOND);
 
 #ifdef RT_USING_HEAP

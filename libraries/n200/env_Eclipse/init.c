@@ -9,6 +9,10 @@
 extern uint32_t disable_mcycle_minstret();
 void _init()
 {
+}
+
+void riscv_init()
+{
 	SystemInit();
 
 	//ECLIC init
