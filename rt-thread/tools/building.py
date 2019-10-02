@@ -871,7 +871,7 @@ def EndBuilding(target, program = None):
 
     Env.AddPostAction(target, rtconfig.POST_ACTION)
     # Add addition clean files
-    Clean(target, 'cconfig.h')
+    # Clean(target, 'cconfig.h')
     Clean(target, 'rtua.py')
     Clean(target, 'rtua.pyc')
 
