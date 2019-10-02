@@ -20,8 +20,8 @@ if os.getenv('RTT_EXEC_PATH'):
 
 EXEC_PATH   = r'./riscv-none-gcc/8.2.0-2.2-20190521-0004/bin'
 
-#BUILD = 'debug'
-BUILD = 'release'
+BUILD = 'debug'
+#BUILD = 'release'
 
 CORE = 'risc-v'
 MAP_FILE = 'rtthread.map'
